@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "Disk usage:"
-df -h
+df | tail -1 | awk '{print $5}' | sed 's/%//'
